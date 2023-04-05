@@ -1,5 +1,5 @@
 # TTL__Lab_polywar
-- This code is a basic implementation of the classic arcade game "Space Invaders" using the Pygame library in Python.
+- This code is a basic implementation of the classic arcade game "Polywar" using the Pygame library in Python.
 
 - The code starts by initializing Pygame and creating the game window. It loads the necessary game assets such as the player image, enemy image, background image, and sound effects.
 

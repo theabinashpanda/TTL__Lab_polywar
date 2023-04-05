@@ -37,7 +37,7 @@ enemyY_change = []
 num_of_enemies = 1
 
 for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('enemy.png'))
+    enemyImg.append(pygame.image.load('enemy1.png'))
     enemyX.append(random.randint(0, 736))
     enemyY.append(random.randint(50, 150))
     enemyX_change.append(2)
@@ -82,6 +82,7 @@ def player(x, y):
 
 
 def enemy(x, y, i):
+    
     screen.blit(enemyImg[i], (x, y))
 
 

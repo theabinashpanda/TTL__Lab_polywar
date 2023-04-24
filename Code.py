@@ -60,7 +60,7 @@ bullet_state = "ready"
 score_value = 0
 font = pygame.font.Font('freesansbold.ttf', 32)
 
-textX = 10
+testX = 10
 testY = 10
 
 # Game Over
@@ -89,7 +89,6 @@ spawn_point=random.randint(4,40)
 def enemy(x, y, i):
     global radius, theta, speed,x_coord,y_coord
     theta += speed
-    
     x =( x_coord+spawn_point)+ 50 * math.cos(theta)
     y = y_coord + 50 * math.sin(theta)
     x_coord +=.1
@@ -98,16 +97,12 @@ def enemy(x, y, i):
     y_coord+=.1
     if(y_coord>=500):
         y_coord = -.1
-        
-
     screen.blit(enemyImg[i], (x, y))
-
 
 def fire_bullet(x, y):
     global bullet_state
     bullet_state = "fire"
     screen.blit(bulletImg, (x + 16, y + 10))
-
 
 def iscollision(enemyX, enemyY, bulletX, bulletY):
     distance = math.sqrt(math.pow(enemyX - bulletX, 2) + (math.pow(enemyY - bulletY, 2)))
@@ -144,9 +139,6 @@ while running:
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                 playerX_change = 0
-
-    # 5 = 5 + -0.1 -> 5 = 5 - 0.1
-    # 5 = 5 + 0.1
 
     playerX += playerX_change
     if playerX <= 0:
@@ -195,5 +187,5 @@ while running:
         bulletY -= bulletY_change
 
     player(playerX, playerY)
-    show_score(textX, testY)
+    show_score(testX, testY)
     pygame.display.update()

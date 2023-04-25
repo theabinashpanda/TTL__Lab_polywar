@@ -1,6 +1,5 @@
 import math
 import random
-
 import pygame
 from pygame import mixer
 
@@ -18,7 +17,7 @@ mixer.music.load("background.wav")
 mixer.music.play(-1)
 
 # Caption and Icon
-pygame.display.set_caption("Space Invader")
+pygame.display.set_caption("PolyWar")
 icon = pygame.image.load('ufo.png')
 pygame.display.set_icon(icon)
 
@@ -37,7 +36,8 @@ enemyY_change = []
 num_of_enemies = 1
 
 for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('enemy1.png'))
+    enemy_choice=random.choice(['enemy1','enemy2','enemy3','enemy4'])
+    enemyImg.append(pygame.image.load(enemy_choice+'.png'))
     enemyX.append(random.randint(0, 736))
     enemyY.append(random.randint(50, 150))
     enemyX_change.append(4)
